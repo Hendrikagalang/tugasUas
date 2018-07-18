@@ -1,0 +1,26 @@
+#include <string>
+#include <iostream>
+
+class Human {
+   private:
+      std::string nameC;
+
+   public:
+      Human(const std::string & name) : nameC(name) { }
+
+      std::string name() const { return nameC; }
+      
+      void talkTo(const Human & person) const {
+         std::cout << nameC << " says: Hello, " << person.name() << "!" << std::endl;
+         }
+   };
+
+int main() {
+   Human Hendrika("Hendrika");
+   Human Galang("Galang");
+   Hendrika.talkTo(Galang);
+   Galang.talkTo(Hendrika);
+   std::cout << std::endl << "Press 'Enter' to exit";
+   std::cin.ignore();
+   return 0;
+   }
